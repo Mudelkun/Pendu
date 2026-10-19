@@ -64,6 +64,10 @@ namespace Pendu
 
         // a function that checks if player won or not
 
+        bool gagner()
+        {
+            return mot.ToLower().All(c => savedChar.ToLower().Contains(c));
+        }
 
         // Entering the word
         private void button1_Click(object sender, EventArgs e)
@@ -92,7 +96,11 @@ namespace Pendu
 
         }
 
-        
+        // ================================================
+        // 
+        // Function principale qui fait fonctioner le jeux
+        //
+        // ================================================
         private void btnDeviner_Click(object sender, EventArgs e)
         {
             bool atLeastOne = false;
@@ -142,6 +150,16 @@ namespace Pendu
             }
 
             TextDeviner.Text = "";
+
+            if (gagner())
+            {
+                pictureBox1.Image = Pendu.Properties.Resources.pendu0;
+                btnDeviner.Enabled = false;
+                TextDeviner.Enabled = false;
+                DejaEntrer.Text = "";
+                MotCacher.Text = "";
+                textEreur.Text = "";
+            }
         }
 
 
