@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,24 +22,38 @@ namespace Pendu
             InitializeComponent();
         }
 
+        string mot = "";
 
-        private void Form1_Load(object sender, EventArgs e)
+        string savedChar = "";
+
+        char[] triedList = new char[11];
+        int nextIndex = 0;
+        int tries = 0;
+
+        void resetGame()
         {
             pictureBox1.Image = Pendu.Properties.Resources.pendu0;
+            MotCacher.Text = "";
+            textMot.Text = "";
+            textMot.Enabled = true;
+            btnMot.Enabled = true;
             btnDeviner.Enabled = false;
             TextDeviner.Enabled = false;
             DejaEntrer.Text = "";
             MotCacher.Text = "";
             textEreur.Text = "";
             winText.Text = "";
+            mot = "";
+            savedChar = "";
+            triedList = new char[11];
+            nextIndex = 0;
+            tries = 0;
         }
-        string mot = "";
-        
-        string savedChar = "";
 
-        char[] triedList = new char[11];
-        int nextIndex = 0;
-        int tries = 0;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            resetGame();
+        }
 
         /// <summary>
         ///     
@@ -69,7 +84,6 @@ namespace Pendu
             return mot.ToLower().All(c => savedChar.ToLower().Contains(c));
         }
 
-        // Entering the word
         private void button1_Click(object sender, EventArgs e)
         {
             /*
@@ -110,9 +124,6 @@ namespace Pendu
                 pictureBox1.Image = Pendu.Properties.Resources.pendu0;
                 btnDeviner.Enabled = false;
                 TextDeviner.Enabled = false;
-                DejaEntrer.Text = "";
-                MotCacher.Text = "";
-                textEreur.Text = "";
             }
 
             // verifier si le character entrer est dans la list
@@ -153,12 +164,11 @@ namespace Pendu
 
             if (gagner())
             {
+                winText.Text = "Gagner !!";
+
                 pictureBox1.Image = Pendu.Properties.Resources.pendu0;
                 btnDeviner.Enabled = false;
                 TextDeviner.Enabled = false;
-                DejaEntrer.Text = "";
-                MotCacher.Text = "";
-                textEreur.Text = "";
             }
         }
 
@@ -218,6 +228,11 @@ namespace Pendu
             {
                 btnDeviner.Enabled = false;
             }
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            resetGame();
         }
     }
 }

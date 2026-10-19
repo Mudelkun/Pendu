@@ -43,6 +43,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.winText = new System.Windows.Forms.Label();
+            this.btnRejouer = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,12 +194,28 @@
             this.winText.Text = "Gagner !!";
             this.winText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnRejouer
+            // 
+            this.btnRejouer.AutoSize = true;
+            this.btnRejouer.BackColor = System.Drawing.Color.Chocolate;
+            this.btnRejouer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.btnRejouer.ForeColor = System.Drawing.Color.Black;
+            this.btnRejouer.Location = new System.Drawing.Point(221, 385);
+            this.btnRejouer.Name = "btnRejouer";
+            this.btnRejouer.Padding = new System.Windows.Forms.Padding(0, 0, 3, 3);
+            this.btnRejouer.Size = new System.Drawing.Size(101, 34);
+            this.btnRejouer.TabIndex = 13;
+            this.btnRejouer.Text = "rejouer";
+            this.btnRejouer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRejouer.Click += new System.EventHandler(this.label3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(554, 446);
+            this.Controls.Add(this.btnRejouer);
             this.Controls.Add(this.winText);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textEreur);
@@ -236,6 +253,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label winText;
+        private System.Windows.Forms.Label btnRejouer;
     }
 }
 
