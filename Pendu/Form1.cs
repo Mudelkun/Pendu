@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -21,6 +22,7 @@ namespace Pendu
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pictureBox1.Image = Pendu.Properties.Resources.pendu0;
             DejaEntrer.Text = "";
             MotCacher.Text = "";
         }
@@ -29,6 +31,7 @@ namespace Pendu
 
         char[] triedList = new char[11];
         int nextIndex = 0;
+        int tries = 0;
 
         string CacherMontrer(string mot)
         {
@@ -47,8 +50,13 @@ namespace Pendu
 
             return motCacher;
         }
+
+        // Entering the word
         private void button1_Click(object sender, EventArgs e)
         {
+            // Par exemple, le mot saisi doit avoir une taille
+            // maximum(15 caractères, cela parait bien)
+
             mot = textMot.Text;
             textMot.Text = "";
             MotCacher.Text = CacherMontrer(mot);
@@ -57,6 +65,7 @@ namespace Pendu
         
         private void btnDeviner_Click(object sender, EventArgs e)
         {
+            bool atLeastOne = false;
             // verifier si le character entrer est dans la list
             for (int i = 0; i < mot.Length; i++)
             {
@@ -72,10 +81,20 @@ namespace Pendu
 
                     // Show congradulation message
                     MotCacher.Text = CacherMontrer(mot);
+                    atLeastOne = true;
                 }
             }
 
+            
+
+            if (!atLeastOne)
+            {
+                pictureBox1.Image = (Image)Properties.Resources.ResourceManager.GetObject("pendu" + tries);
+                tries++;
+            }
+
             DejaEntrer.Text += "," + char.Parse(TextDeviner.Text);
+            
 
             if (nextIndex < triedList.Length)
             {
@@ -103,6 +122,11 @@ namespace Pendu
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

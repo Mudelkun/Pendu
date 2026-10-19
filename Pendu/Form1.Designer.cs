@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnMot = new System.Windows.Forms.Button();
             this.textMot = new System.Windows.Forms.TextBox();
             this.TextDeviner = new System.Windows.Forms.TextBox();
@@ -37,7 +39,11 @@
             this.DejaEntrer = new System.Windows.Forms.Label();
             this.MotCacher = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMot
@@ -132,12 +138,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DEJA ESSAYER";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(365, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Wheat;
+            this.imageList1.Images.SetKeyName(0, "pendu0.png");
+            this.imageList1.Images.SetKeyName(1, "pendu1.png");
+            this.imageList1.Images.SetKeyName(2, "pendu2.png");
+            this.imageList1.Images.SetKeyName(3, "pendu3.png");
+            this.imageList1.Images.SetKeyName(4, "pendu4.png");
+            this.imageList1.Images.SetKeyName(5, "pendu5.png");
+            this.imageList1.Images.SetKeyName(6, "pendu6.png");
+            this.imageList1.Images.SetKeyName(7, "pendu7.png");
+            this.imageList1.Images.SetKeyName(8, "pendu8.png");
+            this.imageList1.Images.SetKeyName(9, "pendu9.png");
+            this.imageList1.Images.SetKeyName(10, "pendu10.png");
+            this.imageList1.Images.SetKeyName(11, "pendu0.png");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pendu.Properties.Resources.pendu1;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(368, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 171);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(554, 446);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.MotCacher);
             this.Controls.Add(this.label2);
@@ -151,6 +197,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +214,9 @@
         private System.Windows.Forms.Label DejaEntrer;
         private System.Windows.Forms.Label MotCacher;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
