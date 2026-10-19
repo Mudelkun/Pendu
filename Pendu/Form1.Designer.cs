@@ -39,9 +39,10 @@
             this.DejaEntrer = new System.Windows.Forms.Label();
             this.MotCacher = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textEreur = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.winText = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             this.TextDeviner.Name = "TextDeviner";
             this.TextDeviner.Size = new System.Drawing.Size(77, 38);
             this.TextDeviner.TabIndex = 3;
+            this.TextDeviner.TextChanged += new System.EventHandler(this.TextDeviner_TextChanged);
             // 
             // btnDeviner
             // 
@@ -138,14 +140,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DEJA ESSAYER";
             // 
-            // label3
+            // textEreur
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(365, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.textEreur.AutoEllipsis = true;
+            this.textEreur.AutoSize = true;
+            this.textEreur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textEreur.ForeColor = System.Drawing.Color.Red;
+            this.textEreur.Location = new System.Drawing.Point(344, 96);
+            this.textEreur.Name = "textEreur";
+            this.textEreur.Size = new System.Drawing.Size(66, 17);
+            this.textEreur.TabIndex = 10;
+            this.textEreur.Text = "ERREUR";
             // 
             // imageList1
             // 
@@ -176,14 +181,27 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // winText
+            // 
+            this.winText.AutoSize = true;
+            this.winText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.winText.ForeColor = System.Drawing.Color.Green;
+            this.winText.Location = new System.Drawing.Point(202, 340);
+            this.winText.Name = "winText";
+            this.winText.Size = new System.Drawing.Size(127, 31);
+            this.winText.TabIndex = 12;
+            this.winText.Text = "Gagner !!";
+            this.winText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(554, 446);
+            this.Controls.Add(this.winText);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textEreur);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.MotCacher);
             this.Controls.Add(this.label2);
@@ -214,9 +232,10 @@
         private System.Windows.Forms.Label DejaEntrer;
         private System.Windows.Forms.Label MotCacher;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label textEreur;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label winText;
     }
 }
 
